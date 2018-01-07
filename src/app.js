@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react';
+import {
+  Route,
+  Link,
+} from 'react-router-dom';
 
-import Item from './Item'
-import Counter from './Counter'
+import PageA from './PageA';
+import PageB from './PageB';
 
-const MyComponent = () => (
-  <div>
-    <Item />    
-    <Counter />
-  </div>
-)
+export default function App({ children }) {
+  return (
+      <div>
+        <Link to='/PageA'>PageA</Link>
+        <br />
+        <Link to='/PageB'>PageB</Link>
 
-export default MyComponent
+        <hr />
+
+        <Route path='/PageA' component={PageA} />
+        <Route path='/PageB' component={PageB} />
+      </div>
+  );
+};
+

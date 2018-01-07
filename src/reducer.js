@@ -8,6 +8,7 @@
 // state(狀態)一開始的值是空陣列`state=[]`
 import { combineReducers } from 'redux'
 import { ADD_ITEM, DEL_ITEM, INIT_ITEMS, ADD_COUNTER, DEL_COUNTER } from './actionTypes'
+import { routerReducer } from 'react-router-redux'
 
 function items(state = [], action) {
     switch (action.type) {
@@ -52,7 +53,8 @@ function counter(state = 0, action) {
 
 const itemApp = combineReducers({
     items,
-    counter
+    counter,
+    routing: routerReducer
 })
 
 export default itemApp
